@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Popover from './Popover';
 
 describe('Popover', () => {
@@ -31,8 +32,5 @@ describe('Popover', () => {
     );
     expect(screen.queryByText('Заголовок')).toBeNull();
     expect(screen.queryByText('Текст подсказки')).toBeNull();
-  });
-
-  test('popover появляется при наведении (пример для App)', () => {
   });
 });
