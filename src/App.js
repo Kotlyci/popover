@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Popover from './Popover';
+import './Popover.css';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
