@@ -1,3 +1,5 @@
+import './style.css';
+
 const btn = document.getElementById('popover-btn');
 const popover = document.getElementById('popover');
 
