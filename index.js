@@ -1,6 +1,6 @@
 import './style.css';
 
-export function initPopover() {
+function initPopover() {
   const btn = document.getElementById('popover-btn');
   const popover = document.getElementById('popover');
 
@@ -8,7 +8,8 @@ export function initPopover() {
 
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    popover.classList.toggle('hidden');
+    popover.classList.toggle('active');
+    // Позиционирование popover относительно кнопки
     const rect = btn.getBoundingClientRect();
     popover.style.top = `${rect.bottom + window.scrollY + 5}px`;
     popover.style.left = `${rect.left + window.scrollX}px`;
@@ -16,7 +17,7 @@ export function initPopover() {
 
   document.addEventListener('click', (e) => {
     if (!btn.contains(e.target) && !popover.contains(e.target)) {
-      popover.classList.add('hidden');
+      popover.classList.remove('active');
     }
   });
 }
